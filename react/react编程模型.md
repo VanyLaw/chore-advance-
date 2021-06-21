@@ -385,7 +385,7 @@ Parent (onClick)
   - re-render Child
 *** 结束 React 浏览器 click 事件处理过程  ***
 ```
-组件内调用 setState 并不会立即执行重渲染。相反，React 会先触发所有的事件处理器，然后再触发一次重渲染以进行所谓的批量更新。
+*组件内调用 setState 并不会立即执行重渲染。相反，React 会先触发所有的事件处理器，然后再触发一次重渲染以进行所谓的批量更新。*
 
 当状态逻辑变得更加复杂而不仅仅只是少数的 setState 调用时，我建议你使用 useReducer Hook 来描述你的局部状态。它就像 “updater” ( setState(state=> state+1) )的升级模式在这里你可以给每一次更新命名：
 
