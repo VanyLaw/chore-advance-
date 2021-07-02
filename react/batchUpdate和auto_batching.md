@@ -36,6 +36,7 @@ Transaction 对一个函数进行包装，让 React 有机会在一个函数运�
 
 简单来说，在 Transaction 的 initialize 阶段，一个 update queue 被创建。在 Transaction 中调用 setState 方法时，状态并不会立即应用，而是被推入到 update queue 中。函数执行结束进入 Transaction 的 close 阶段，update queue 会被 flush，这时新的状态会被应用到组件上并开始后续 Virtual DOM 更新等工作。
 
+## Vue 的 batchUpdate ##
 与 React 相比 Vue 实现 Batch Update 的方法就要简单很多：直接借助 JavaScript 的 Event Loop。Vue 中 Batch Update 的核心代码只有大约 20 行：
 
 ```
